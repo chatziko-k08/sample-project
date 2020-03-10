@@ -2,6 +2,9 @@
 MODULES = ../../modules
 INCLUDE = ../../include
 
+# compiler
+CC = gcc
+
 # Compile options. Το -I<dir> λέει στον compiler να αναζητήσει εκεί include files
 CFLAGS = -Wall -Werror -g -I$(INCLUDE)
 
@@ -15,7 +18,7 @@ EXEC = minmax
 ARGS = 1 -2 3 52
 
 $(EXEC): $(OBJS)
-	gcc $(OBJS) -o $(EXEC)
+	$(CC) $(OBJS) -o $(EXEC)
 
 clean:
 	rm -f $(OBJS) $(EXEC)

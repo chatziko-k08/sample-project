@@ -2,6 +2,9 @@
 MODULES = ../modules
 INCLUDE = ../include
 
+# compiler
+CC = gcc
+
 # Compile options. Το -I<dir> λέει στον compiler να αναζητήσει εκεί include files
 CFLAGS = -Wall -Werror -g -I$(INCLUDE)
 
@@ -24,10 +27,10 @@ ARGS2 =
 all: $(EXEC1) $(EXEC2)
 
 $(EXEC1): $(OBJS1)
-	gcc $(OBJS1) -o $(EXEC1) $(LDFLAGS)
+	$(CC) $(OBJS1) -o $(EXEC1) $(LDFLAGS)
 
 $(EXEC2): $(OBJS2)
-	gcc $(OBJS2) -o $(EXEC2) $(LDFLAGS)
+	$(CC) $(OBJS2) -o $(EXEC2) $(LDFLAGS)
 
 clean:
 	rm -f $(OBJS1) $(OBJS2) $(EXEC1) $(EXEC2)
