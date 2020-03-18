@@ -159,7 +159,7 @@ void print_coloring(Coloring coloring) {
 			node != LIST_EOF;
 			node = list_next(country->neighbors, node)) {
 
-			printf("%s ", (char*)list_node_value(country->neighbors, node));
+			printf("%s ", (String)list_node_value(country->neighbors, node));
 		}
 
 		// avail colirs
@@ -168,7 +168,7 @@ void print_coloring(Coloring coloring) {
 			node != SET_EOF;
 			node = set_next(country->avail_colors, node)) {
 
-			printf("%s ", (char*)set_node_value(country->avail_colors, node));
+			printf("%s ", (String)set_node_value(country->avail_colors, node));
 		}
 
 		printf("\n");
