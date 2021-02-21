@@ -9,8 +9,10 @@ CC = gcc
 CFLAGS = -Wall -Werror -g -I$(INCLUDE)
 
 # Για test coverage
-CFLAGS += --coverage
-LDFLAGS += --coverage
+ifeq ($(MAKECMDGOALS), coverage)
+	CFLAGS += --coverage
+	LDFLAGS += --coverage
+endif
 
 # Αρχεία .o
 OBJS1 = stats_test.o $(MODULES)/stats.o
@@ -33,7 +35,8 @@ $(EXEC2): $(OBJS2)
 	$(CC) $(OBJS2) -o $(EXEC2) $(LDFLAGS)
 
 clean:
-	rm -f $(OBJS1) $(OBJS2) $(EXEC1) $(EXEC2) *.gcda *.gcno
+	rm -f $(OBJS1) $(OBJS2) $(EXEC1) $(EXEC2)
+	rm -f ../**/*.gcda ../**/*.gcno
 	rm -rf coverage
 
 coverage: clean all run
