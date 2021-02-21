@@ -33,7 +33,8 @@ $(EXEC2): $(OBJS2)
 	$(CC) $(OBJS2) -o $(EXEC2) $(LDFLAGS)
 
 clean:
-	rm -f $(OBJS1) $(OBJS2) $(EXEC1) $(EXEC2)
+	rm -f $(OBJS1) $(OBJS2) $(EXEC1) $(EXEC2) *.gcda *.gcno
+	rm -rf coverage
 
 coverage: clean all run
 	@mkdir -p coverage
