@@ -16,4 +16,4 @@ k08.a:
 	cp k08_$(SUFFIX).a k08.a
 
 clean:
-	$(RM) k08.a libbmp.a
+	$(RM) k08.a
