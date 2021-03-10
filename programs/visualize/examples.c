@@ -14,7 +14,7 @@ typedef struct {
 
 
 
-void local_vars_example() {
+void local_vars_example(void) {
 	int my_int = 1;
 	float my_float = 2.0;
 	int my_array[3] = {3, 4, 5};
@@ -28,7 +28,7 @@ void local_vars_example() {
 	printf("local_vars_example: %d %f %d %d\n", my_int, my_float, my_array[0], my_struct.field1);
 }
 
-void pointer_example() {
+void pointer_example(void) {
 	int foo = 1;
 	int bar = 2;
 
@@ -40,7 +40,7 @@ void pointer_example() {
 	**double_pointer = 4;
 }
 
-void malloc_example() {
+void malloc_example(void) {
 	int* my_int = malloc(sizeof(*my_int));
 	*my_int = 1;
 
@@ -62,7 +62,7 @@ void malloc_example() {
 	free(my_struct);
 }
 
-void string_example() {
+void string_example(void) {
 	char string1[5];
 	strcpy(string1, "foo");
 
@@ -77,7 +77,7 @@ void swap(int* a, int* b) {
 	*b = temp;
 }
 
-void swap_example() {
+void swap_example(void) {
 	int foo = 1;
 	int bar = 2;
 	swap(&foo, &bar);
@@ -90,7 +90,7 @@ ListNode* create_node(int value) {
 	return node;
 }
 
-void list_example() {
+void list_example(void) {
 	ListNode* first = create_node(0);
 	first->next = create_node(1);
 	first->next->next = create_node(2);
@@ -108,12 +108,12 @@ int recursive_function(int n) {
 	return n + temp;
 }
 
-void recursion_example() {
+void recursion_example(void) {
 	int result = recursive_function(3);
 	printf("recursion_example: %d\n", result);
 }
 
-void memory_leak_example() {
+void memory_leak_example(void) {
 	int* my_int;
 	
 	my_int = malloc(sizeof(*my_int));
@@ -125,7 +125,7 @@ void memory_leak_example() {
 
 	
 
-int main() {
+int main(void) {
 	local_vars_example();
 	pointer_example();
 	swap_example();

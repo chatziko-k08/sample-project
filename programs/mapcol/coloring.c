@@ -110,7 +110,7 @@ int compare_strings(Pointer a, Pointer b) {
 	return strcmp(a, b);
 }
 
-Coloring read_input() {
+Coloring read_input(void) {
 	int N = 50000;
 	char line[N];
 

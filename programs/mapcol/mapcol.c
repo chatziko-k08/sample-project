@@ -1,7 +1,7 @@
 
 #include "coloring.h"
 
-int main() {
+int main(void) {
 	Coloring coloring = read_input();
 
 	tzini(coloring);
