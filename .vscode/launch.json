@@ -23,7 +23,7 @@
 				"MIMode": "gdb",
 				"internalConsoleOptions": "neverOpen",				// don't show the debugger console
 				"environment": [
-					{"name":"LD_PRELOAD", "value":"${workspaceFolder}/lib/visualize-c-memory.so"},
+					{"name":"LD_PRELOAD", "value":"${workspaceFolder}/.vscode/visualize-c-memory.so"},
 				],
 				"setupCommands": [
 					{
@@ -32,7 +32,7 @@
 						"ignoreFailures": true
 					},
 					{
-						"text": "source ${workspaceFolder}/lib/visualize-c-memory.py",
+						"text": "source ${workspaceFolder}/.vscode/visualize-c-memory.py",
 						"ignoreFailures": true
 					}
 				]
@@ -66,7 +66,7 @@
 				"MIMode": "gdb",
 				"internalConsoleOptions": "neverOpen",				// don't show the debugger console
 				"environment": [
-					{"name":"LD_PRELOAD", "value":"${workspaceFolder}/lib/visualize-c-memory.so"},
+					{"name":"LD_PRELOAD", "value":"${workspaceFolder}/.vscode/visualize-c-memory.so"},
 				],
 				"setupCommands": [
 					{
@@ -75,7 +75,7 @@
 						"ignoreFailures": true
 					},
 					{
-						"text": "source ${workspaceFolder}/lib/visualize-c-memory.py",
+						"text": "source ${workspaceFolder}/.vscode/visualize-c-memory.py",
 						"ignoreFailures": true
 					}
 				]
@@ -109,7 +109,7 @@
 				"MIMode": "gdb",
 				"internalConsoleOptions": "neverOpen",				// don't show the debugger console
 				"environment": [
-					{"name":"LD_PRELOAD", "value":"${workspaceFolder}/lib/visualize-c-memory.so"},
+					{"name":"LD_PRELOAD", "value":"${workspaceFolder}/.vscode/visualize-c-memory.so"},
 				],
 				"setupCommands": [
 					{
@@ -118,7 +118,7 @@
 						"ignoreFailures": true
 					},
 					{
-						"text": "source ${workspaceFolder}/lib/visualize-c-memory.py",
+						"text": "source ${workspaceFolder}/.vscode/visualize-c-memory.py",
 						"ignoreFailures": true
 					}
 				]
