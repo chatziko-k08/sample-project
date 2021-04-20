@@ -1,0 +1,69 @@
+# Filename: matrmult.ipl
+#
+# Compute the product of an N x L matrix with an L x M matrix
+
+argument 1 N
+argument 2 L
+argument 3 M
+NL = N * L
+LM = L * M
+NM = N * M
+new a[NL]
+new b[LM]
+new c[NM]
+# random elements on first array
+while i < NL
+	random ele
+	ele = ele % 100
+	a[i] = ele
+	i = i + 1
+	# print element
+	m = i % L
+	if m != 0
+		write ele
+	else
+		writeln ele
+# random elements on second array
+while j < LM
+	random ele
+	ele = ele % 100
+	b[j] = ele
+	j = j + 1
+	# print element
+	mod = j % M
+	if mod != 0
+		write ele
+	else
+		writeln ele
+# compute and print multiplication
+i = 0
+while i < N
+	j = 0
+	while j < M
+		k = 0
+		# index for third (result) array
+		z = i * M
+		z = z + j
+		# loop to compute sum
+		while k < L
+			# index for first array
+			x = i * L
+			x = x + k
+			# index for second array
+			y = k * M
+			y = y + j
+			# multiply and add
+			mul = a[x] * b[y]
+			c[z] = c[z] + mul
+			k = k + 1
+		j = j + 1
+		# print element
+		mod = j % M
+		if mod != 0
+			write c[z]
+		else
+			writeln c[z]
+	i = i + 1
+free a
+free b
+free c

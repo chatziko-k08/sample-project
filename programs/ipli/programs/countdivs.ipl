@@ -1,0 +1,23 @@
+# Filename: countdivs.ipl
+#
+# Find the number of divisors of all numbers in a given interval
+
+argument 1 minnumb
+argument 2 maxnumb
+number = minnumb
+while number <= maxnumb
+	count = 2
+	divisor = 2
+	divisor2 = divisor * divisor
+	while divisor2 < number
+		remainder = number % divisor
+		if remainder == 0
+			count = count + 2
+		divisor = divisor + 1
+		divisor2 = divisor * divisor
+	quotient = number / divisor
+	if quotient == divisor
+		count = count + 1
+	write number
+	writeln count
+	number = number + 1

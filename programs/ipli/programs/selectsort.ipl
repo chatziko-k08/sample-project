@@ -1,0 +1,61 @@
+# Filename: selectsort.ipl
+#
+# Sort in ascending order an array with random
+# elements, using the selection sort algorithm
+
+# initialize
+argument size args
+if args == 0
+	n = 1000
+else
+	argument 1 n
+new a[n]
+m = n * 9
+m = m / 10
+l = n / 10
+while i != n
+	random a[i]
+	a[i] = a[i] % m
+	a[i] = a[i] + l
+	i = i + 1
+# print
+i = 0
+while i != n
+	j = i + 1
+	m = j % 20
+	if m == 0
+		writeln a[i]
+	else
+		if j == n
+			writeln a[i]
+		else
+			write a[i]
+	i = j
+# sort (using selectsort)
+i = 0
+while i != n
+	min = i
+	j = i + 1
+	while j != n
+		if a[j] < a[min]
+			min = j
+		j = j + 1
+	t = a[i]
+	a[i] = a[min]
+	a[min] = t
+	i = i + 1
+# print
+writeln n
+i = 0
+while i != n
+	j = i + 1
+	m = j % 20
+	if m == 0
+		writeln a[i]
+	else
+		if j == n
+			writeln a[i]
+		else
+			write a[i]
+	i = j
+free a

@@ -1,0 +1,30 @@
+# Filename: humble.ipl
+#
+# Find the N-th humble numberm for a given N
+
+read N
+i = 0         # Number of so far found humble numbers
+number = 1    # Number to be checked
+while i < N
+	temp = number     # Keep current number safe
+	remainder = temp % 2
+	while remainder == 0
+		temp = temp / 2
+		remainder = temp % 2
+	remainder = temp % 3
+	while remainder == 0
+		temp = temp / 3
+		remainder = temp % 3
+	remainder = temp % 5
+	while remainder == 0
+		temp = temp / 5
+		remainder = temp % 5
+	remainder = temp % 7
+	while remainder == 0
+		temp = temp / 7
+		remainder = temp % 7
+	if temp == 1               # Found new humble
+		i = i + 1
+	number = number + 1        # Prepare next number
+number = number - 1                # Cancel last increment
+writeln number

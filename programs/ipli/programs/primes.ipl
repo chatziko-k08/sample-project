@@ -1,0 +1,30 @@
+# Filename: primes.ipl
+#
+# Find all prime numbers less than or equal to a given number
+
+read maxnumb
+#maxnumb = 20
+number = 1
+while number <= maxnumb
+	if number == 1
+		is_prime = 0
+	else
+		is_prime = 1
+	divisor = 2
+	if number < 4
+		stop = 1
+	else
+		stop = 0
+	while stop == 0
+		remainder = number % divisor
+		if remainder == 0
+			is_prime = 0
+		divisor = divisor + 1
+		if is_prime == 0
+			stop = 1
+		divisor2 = divisor * divisor
+		if divisor2 > number
+			stop = 1
+	if is_prime != 0
+		writeln number
+	number = number + 1

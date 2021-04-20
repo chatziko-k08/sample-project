@@ -1,0 +1,33 @@
+# Filename: factorize.ipl
+#
+# Generate random numbers y, z and find the prime
+# factors of the number x produced by the formula 
+# x = ((y mod 32768) + 1) * ((z mod 32768) + ) + 1
+
+# generate random values
+random y
+y = y % 32768
+y = y + 1
+random z
+z = z % 32768
+z = 1 + z
+x = y * z
+x = x + 1
+writeln x             # print the number to be factorized
+remainder = x % 2
+while remainder == 0
+	writeln 2     # print 2 as a factor
+	x = x / 2
+	remainder = x % 2
+factor = 3            # check if 3, 5, 7, ... are factors
+factor2 = factor * factor
+while factor2 <= x    # stop at the square root 
+	remainder = x % factor
+	while remainder == 0
+		writeln factor     # print factor found
+		x = x / factor
+		remainder = x % factor
+	factor = factor + 2
+	factor2 = factor * factor
+if x != 1
+	writeln x                  # print last factor

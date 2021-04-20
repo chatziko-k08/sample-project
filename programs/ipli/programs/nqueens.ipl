@@ -1,0 +1,64 @@
+# Filename: nqueens.ipl
+#
+# Find one solution of the N-queens problem
+
+argument size args
+if args > 0
+	argument 1 n
+else
+	n = 8
+new q[n]
+# starting conditions
+i = 0 - 1
+ok_so_far = 1
+while 0 == 0
+	# go for next variable
+	if ok_so_far != 0
+		i = i + 1
+		# check if finished
+		if i == n
+			break
+		# try first value
+		q[i] = 0
+	# try next value in same variable
+	else
+		q[i] = q[i] + 1
+		# exhausted values
+		if q[i] == n
+			# check if failed
+			if i == 0
+				break
+			# backtrack to previous variable
+			i = i - 1
+			continue
+	ok_so_far = 0
+	# check previous queens
+	j = 0
+	while j != i
+		# check same column
+		if q[i] == q[j]
+			continue 2
+		# check same forward diagonal
+		diag_i = q[i] - i
+		diag_j = q[j] - j
+		if diag_i == diag_j
+			continue 2
+		# check same backward diagonal
+		diag_i = q[i] + i
+		diag_j = q[j] + j
+		if diag_i == diag_j
+			continue 2
+		j = j + 1
+	# no collisions!
+	ok_so_far = 1
+# if solved print the solution
+if ok_so_far != 0
+	n1 = n - 1
+	i = 0
+	while i != n1
+		x = q[i] + 1
+		write x
+		i = i + 1
+	x = q[i] + 1
+	writeln x
+free q
