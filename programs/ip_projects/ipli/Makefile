@@ -1,6 +1,6 @@
 # paths
-LIB = ../../lib
-INCLUDE = ../../include
+LIB = ../../../lib
+INCLUDE = ../../../include
 
 # compiler
 CC = gcc
