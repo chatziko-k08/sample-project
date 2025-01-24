@@ -5,8 +5,10 @@ ifeq ($(OS),Windows_NT)
 	SUFFIX = win
 else ifeq ($(shell uname -s),Linux)
 	SUFFIX = linux
+else ifeq ($(shell uname -m),arm64)
+	SUFFIX = macos_arm64
 else
-	SUFFIX = macos
+	SUFFIX = macos_intel
 endif
 
 all: k08.a
