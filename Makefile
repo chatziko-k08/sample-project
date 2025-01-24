@@ -4,8 +4,8 @@
 #   $(MAKE) -C <dir> <target>
 # το οποίο είναι ισοδύναμο με το να τρέξουμε make <target> μέσα στο directory <foo>
 
-# Ολα τα directories μέσα στο programs directory
-PROGRAMS = $(subst programs/, , $(wildcard programs/*))
+# Ολα τα directories μέσα στο programs τα οποία περιέχουν Makefile
+PROGRAMS = $(patsubst programs/%/Makefile, %, $(wildcard programs/*/Makefile))
 
 # Compile: όλα, προγράμματα, tests
 all: programs tests
