@@ -35,6 +35,6 @@ $(LIB)/k08.a:
 clean:
 	rm -f $(OBJS) $(EXEC)
 
-run: $(EXEC)
+run: $(EXEC) $(TEST)
 	./$(EXEC) $(ARGS)
 	./$(TEST)
