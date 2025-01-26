@@ -1,7 +1,9 @@
 # Makefile για τη βιβλιοθήκη k08.a
 
 # Βρίσκουμε ποιο λειτουργικό σύστημα χρησιμοποιείται
-ifeq ($(OS),Windows_NT)
+ifdef WASM
+	SUFFIX = wasm
+else ifeq ($(OS),Windows_NT)
 	SUFFIX = win
 else ifeq ($(shell uname -s),Linux)
 	SUFFIX = linux
