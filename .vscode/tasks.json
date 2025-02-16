@@ -60,7 +60,7 @@
 				"${config:c_project.program}"
 			],
 			"options": {
-				"cwd": "${workspaceRoot}/${config:c_project.dir}"
+				"cwd": "${workspaceFolder}/${config:c_project.dir}"
 			},
 			"presentation": {
 				"clear": true,
@@ -70,7 +70,7 @@
 				"base": "$gcc",
 				"fileLocation": [
 					"relative",
-					"${workspaceRoot}/${config:c_project.dir}"
+					"${workspaceFolder}/${config:c_project.dir}"
 				]
 			},
 			"group": "build"
@@ -82,7 +82,7 @@
 			"label": "Single file: compile and run",
 			"command": "./run.sh",
 			"options": {
-				"cwd": "${workspaceRoot}/.vscode",
+				"cwd": "${workspaceFolder}/.vscode",
 				"env": {
 					"CODE_DIR": "${fileDirname}",
 					"CODE_RUN": "./${fileBasenameNoExtension} ${config:c_project.args}",
@@ -103,7 +103,7 @@
 			"label": "All files in directory: compile and run",
 			"command": "./run.sh",
 			"options": {
-				"cwd": "${workspaceRoot}/.vscode",
+				"cwd": "${workspaceFolder}/.vscode",
 				"env": {
 					"CODE_DIR": "${fileDirname}",
 					"CODE_RUN": "./${config:c_project.program} ${config:c_project.args}",
@@ -124,9 +124,9 @@
 			"label": "Make: compile and run",
 			"command": "./run.sh",
 			"options": {
-				"cwd": "${workspaceRoot}/.vscode",
+				"cwd": "${workspaceFolder}/.vscode",
 				"env": {
-					"CODE_DIR": "${workspaceRoot}/${config:c_project.dir}",
+					"CODE_DIR": "${workspaceFolder}/${config:c_project.dir}",
 					"CODE_RUN": "./${config:c_project.program} ${config:c_project.args}",
 				},
 				"shell": {
@@ -151,7 +151,7 @@
 			"label": "Single file: compile and run with valgrind",
 			"command": "./run.sh",
 			"options": {
-				"cwd": "${workspaceRoot}/.vscode",
+				"cwd": "${workspaceFolder}/.vscode",
 				"env": {
 					"CODE_DIR": "${fileDirname}",
 					"CODE_RUN": "valgrind --error-exitcode=1 --leak-check=full --show-leak-kinds=all ./${fileBasenameNoExtension} ${config:c_project.args}",
@@ -172,7 +172,7 @@
 			"label": "All files in directory: compile and run with valgrind",
 			"command": "./run.sh",
 			"options": {
-				"cwd": "${workspaceRoot}/.vscode",
+				"cwd": "${workspaceFolder}/.vscode",
 				"env": {
 					"CODE_DIR": "${fileDirname}",
 					"CODE_RUN": "valgrind --error-exitcode=1 --leak-check=full --show-leak-kinds=all ./${config:c_project.program} ${config:c_project.args}",
@@ -193,9 +193,9 @@
 			"label": "Make: compile and run with valgrind",
 			"command": "./run.sh",
 			"options": {
-				"cwd": "${workspaceRoot}/.vscode",
+				"cwd": "${workspaceFolder}/.vscode",
 				"env": {
-					"CODE_DIR": "${workspaceRoot}/${config:c_project.dir}",
+					"CODE_DIR": "${workspaceFolder}/${config:c_project.dir}",
 					"CODE_RUN": "valgrind --error-exitcode=1 --leak-check=full --show-leak-kinds=all ./${config:c_project.program} ${config:c_project.args}",
 				},
 				"shell": {
