@@ -78,9 +78,10 @@
 
 		////////////// Compile and run ///////////////////////////////////
 		{
-			"type": "shell",
+			"type": "cppbuild",
 			"label": "Single file: compile and run",
 			"command": "./run.sh",
+			"args": [],
 			"options": {
 				"cwd": "${workspaceFolder}/.vscode",
 				"env": {
@@ -99,9 +100,10 @@
 			"group": "build"
 		},
 		{
-			"type": "shell",
+			"type": "cppbuild",
 			"label": "All files in directory: compile and run",
 			"command": "./run.sh",
+			"args": [],
 			"options": {
 				"cwd": "${workspaceFolder}/.vscode",
 				"env": {
@@ -120,9 +122,10 @@
 			"group": "build"
 		},
 		{
-			"type": "shell",
+			"type": "cppbuild",
 			"label": "Make: compile and run",
 			"command": "./run.sh",
+			"args": [],
 			"options": {
 				"cwd": "${workspaceFolder}/.vscode",
 				"env": {
@@ -147,9 +150,10 @@
 
 		////////////// Compile and run with valgrind ///////////////////////////////////
 		{
-			"type": "shell",
+			"type": "cppbuild",
 			"label": "Single file: compile and run with valgrind",
 			"command": "./run.sh",
+			"args": [],
 			"options": {
 				"cwd": "${workspaceFolder}/.vscode",
 				"env": {
@@ -168,9 +172,10 @@
 			"group": "build"
 		},
 		{
-			"type": "shell",
+			"type": "cppbuild",
 			"label": "All files in directory: compile and run with valgrind",
 			"command": "./run.sh",
+			"args": [],
 			"options": {
 				"cwd": "${workspaceFolder}/.vscode",
 				"env": {
@@ -189,9 +194,10 @@
 			"group": "build"
 		},
 		{
-			"type": "shell",
+			"type": "cppbuild",
 			"label": "Make: compile and run with valgrind",
 			"command": "./run.sh",
+			"args": [],
 			"options": {
 				"cwd": "${workspaceFolder}/.vscode",
 				"env": {
@@ -212,7 +218,7 @@
 
 		////////////// Set args ///////////////////////////////////
 		{
-			"type": "shell",
+			"type": "cppbuild",
 			"label": "Set program arguments",
 			"command": "code",
 			"args": [
