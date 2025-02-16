@@ -3,7 +3,8 @@
 	"tasks": [
 		////////////// Compile ///////////////////////////////////
 		{
-			"type": "cppbuild",				// avoids 1 second delay after the task. Not sure about other differences from "shell"
+			// "cppbuild" is more verbose that "shell" (outputs the command) but avoids 1 second delat (maybe there are other differences?)
+			"type": "cppbuild",
 			"label": "Single file: compile",
 			"command": "gcc",
 			"args": [
@@ -78,7 +79,7 @@
 
 		////////////// Compile and run ///////////////////////////////////
 		{
-			"type": "cppbuild",
+			"type": "shell", // less verbose
 			"label": "Single file: compile and run",
 			"command": "./run.sh",
 			"args": [],
@@ -100,7 +101,7 @@
 			"group": "build"
 		},
 		{
-			"type": "cppbuild",
+			"type": "shell",
 			"label": "All files in directory: compile and run",
 			"command": "./run.sh",
 			"args": [],
@@ -122,7 +123,7 @@
 			"group": "build"
 		},
 		{
-			"type": "cppbuild",
+			"type": "shell",
 			"label": "Make: compile and run",
 			"command": "./run.sh",
 			"args": [],
@@ -150,7 +151,7 @@
 
 		////////////// Compile and run with valgrind ///////////////////////////////////
 		{
-			"type": "cppbuild",
+			"type": "shell",
 			"label": "Single file: compile and run with valgrind",
 			"command": "./run.sh",
 			"args": [],
@@ -172,7 +173,7 @@
 			"group": "build"
 		},
 		{
-			"type": "cppbuild",
+			"type": "shell",
 			"label": "All files in directory: compile and run with valgrind",
 			"command": "./run.sh",
 			"args": [],
@@ -194,7 +195,7 @@
 			"group": "build"
 		},
 		{
-			"type": "cppbuild",
+			"type": "shell",
 			"label": "Make: compile and run with valgrind",
 			"command": "./run.sh",
 			"args": [],
