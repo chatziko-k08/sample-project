@@ -33,7 +33,7 @@ $(LIB)/k08.a:
 	$(MAKE) -C $(LIB) k08.a
 
 clean:
-	rm -f $(OBJS) $(EXEC)
+	rm -f $(OBJS) $(TEST_OBJS) $(EXEC) $(TEST)
 
 run: $(EXEC) $(TEST)
 	./$(EXEC) $(ARGS)
