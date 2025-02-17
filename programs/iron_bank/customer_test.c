@@ -14,7 +14,7 @@ void test_customer_read_from_file(void) {
 	Customer* customers = customer_read_from_file("customers.csv", &size);
 
 	TEST_ASSERT(customers != NULL);
-	TEST_ASSERT(size == 163);
+	TEST_ASSERT(size == 162);
 
 	// έλεγχος ότι ο πίνακας είναι ταξινομημένος
 	for (int i = 1; i < size; i++)

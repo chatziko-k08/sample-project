@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #include "customer.h"
 
@@ -26,20 +27,23 @@ Customer* customer_read_from_file(String filename, int* ret_size) {
 	int size = 0;
 
 	// διαβάζουμε όλες τις γραμμές του αρχείου
-	while(!feof(file)) {
+	while (true) {
+		// διαβάζουμε το balance, τερματισμός στο τέλος του αρχείου
+		int balance;
+		if (fscanf(file, "%d,", &balance) == EOF)
+			break;
+
+		// έχουμε νέα γραμμή, έλεγχος μεγέθους
 		if(size == MAX_ARRAY_SIZE)
 			break;
 		size++;
-
-		// διαβάζουμε το balance
-		int balance;
-		fscanf(file, "%d,", &balance);
 
 		// διαβάζουμε το όνομα, αφαιρώντας το newline (\n) από το τέλος
 		char name[MAX_NAME_SIZE];
 		fgets(name, MAX_NAME_SIZE, file);
 		name[strlen(name) - 1] = '\0';
 
+		// προσθήκη στον πίνακα
 		customers[size].balance = balance;
 		customers[size].name = strdup(name);
 	}
