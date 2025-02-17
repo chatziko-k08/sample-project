@@ -17,7 +17,7 @@ EXEC = iron_bank
 TEST = customer_test
 
 # Παράμετροι για δοκιμαστική εκτέλεση
-ARGS =
+ARGS = 'Jon Snow'
 
 all: $(EXEC) $(TEST)
 
