@@ -9,8 +9,15 @@
 #define MAX_NAME_SIZE 100
 
 
+// Σύγκριση πελατών με βάση το balance τους
+
 static int compare_customers(Customer* a, Customer* b) {
-	return a->balance - b->balance;
+	if (a->balance < b->balance)
+		return -1;
+	else if (a->balance > b->balance)
+		return 1;
+	else
+		return 0;
 }
 
 // Διαβάζει τους πελάτες από το αρχείο filename και τους επιστρέφει
